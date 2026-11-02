@@ -27,7 +27,8 @@ const feedbackSchema = new mongoose.Schema({
         required : [true, 'should be between 1 to 5'],
     },
     status : {
-        type : Boolean,
+        type : string,
+        enum : ['pending', 'reviewed'],
         default : true
     }
 }, 

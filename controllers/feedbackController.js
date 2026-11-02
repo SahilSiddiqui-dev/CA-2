@@ -74,7 +74,7 @@ exports.changeStatus = asyncHandler(async(req, res) => {
         })
     }
     
-    const feedback = await Feedback.findByIdAndUpdate(id, {status : false}, {new : true});
+    const feedback = await Feedback.findByIdAndUpdate(id, {status : 'reviewed'}, {new : true});
     if(!feedback) {
         return res.status(404).json({
             message : 'Feedback not found'
